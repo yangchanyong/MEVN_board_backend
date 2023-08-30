@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시" />
+    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/member/register.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +29,7 @@
         <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,25 +39,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;member&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.2&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/workspaces/workspace-express&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "18.16.0",
+    "javascript.nodejs.core.library.typings.version": "18.16.0",
+    "last_opened_file_path": "C:/java/workspaces/MEVN_Board_Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\workspaces\workspace-express\board-back\model" />
@@ -70,6 +76,7 @@
       <workItem from="1693189065765" duration="16349000" />
       <workItem from="1693283549832" duration="12221000" />
       <workItem from="1693299828665" duration="55000" />
+      <workItem from="1693316171353" duration="5802000" />
     </task>
     <task id="LOCAL-00001" summary="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시">
       <created>1693299104374</created>
@@ -92,6 +99,9 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시" />
     <option name="LAST_COMMIT_MESSAGE" value="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시" />
   </component>

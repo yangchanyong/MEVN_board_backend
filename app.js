@@ -25,13 +25,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/auth/signup', require('./routes/member/register'))
+// app.use('/auth/signup', require('./routes/member/register'))
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const Member = require('./model/member');
-const router = require('./router')(app, Member);
+const router = require('./router');
+router.registerMember(app, Member);
+router.memberList(app, Member);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
