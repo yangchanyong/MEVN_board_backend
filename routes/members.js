@@ -7,6 +7,15 @@ const register = router.post('/signup', (req, res) => {
         .catch(err => res.status(500).send(err));
 });
 
+// const register = router.post('/signup', async (req, res) => {
+//     try {
+//         const member = await Member.create(req.body);
+//         res.send(member);
+//     } catch (err) {
+//         res.status(500).send(err);
+//     }
+// });
+
 const memberList = router.get('/memberList', (req, res) => {
     Member.findAll()
         .then((members) => {
