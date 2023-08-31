@@ -8,7 +8,7 @@ describe('api test', () => {
     it('회원가입 테스트',  async () => {
 
         const member = {
-            username : "test123",
+            username : "test1231",
             pw : "1234",
             nickName : "Jset tester",
         };
