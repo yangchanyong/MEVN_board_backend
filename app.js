@@ -12,9 +12,9 @@ const app = express();
 
 const passportConfig = require('./passport');
 // const LocalStrategy = require('passport-local').Strategy;
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local');
 
-const authRouter = require('./routes/auth');
+// const authRouter = require('./routes/auth');
 const session = require('express-session');
 const passport = require('passport');
 passportConfig();
@@ -34,7 +34,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', authRouter);
+app.use('/auth', require('./routes/auth'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

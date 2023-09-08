@@ -2,14 +2,15 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
-const User = require('../models/member');
+const Member = require('../models/member');
 
 module.exports = () => {
+    console.log('local strategy 생성')
     passport.use(
         new LocalStrategy(
             {
                 usernameField : 'username',
-                passwordField : 'pw',
+                passwordField : 'pw'
 
                 // session : true
             },
@@ -17,11 +18,12 @@ module.exports = () => {
                 try {
                     console.log(username);
 
-                    const logUser = await User.findOne({username: username });
-                    if(logUser) {
-                        const result = await bcrypt.compare(pw, logUser.pw)
+                    const logMember = await Member.findOne({ where: username });
+                    console.log("logMember : ", logMember)
+                    if(logMember) {
+                        const result = await bcrypt.compare(pw, logMember.pw)
                         if(result) {
-                            done(null, logUser);
+                            done(null, logMember);
                         }else {
                             done(null, false, {message : '비밀번호가 일치하지 않습니다.'})
                         }
@@ -35,4 +37,5 @@ module.exports = () => {
             },
         ),
     );
+    console.log('LocalStrategy = '. LocalStrategy);
 };

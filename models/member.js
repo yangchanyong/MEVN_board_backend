@@ -9,24 +9,28 @@ const Account = new mongoose.Schema({
     updateDate:{type:Date, default: Date.now()}
 });
 
-Account.methods.hashPassword = async function() {
-    try {
-        const salt = await bcrypt.genSalt(10);
-        this.pw = await bcrypt.hash(this.pw, salt);
-    }catch (err) {
-        throw err;
-    }
-}
+// Account.methods.hashPassword = async function() {
+//     try {
+//         const salt = await bcrypt.genSalt(10);
+//         this.pw = await bcrypt.hash(req.body.pw, 10);
+//     }catch (err) {
+//         throw err;
+//     }
+// }
 
-Account.statics.create = function(payload) {
+Account.statics.create = async function(payload) {
     const member = new this(payload);
-    member.hashPassword();
+    member.pw = await bcrypt.hash(payload.pw, 10);
     return member.save();
 };
 
 Account.statics.findAll = function() {
     return this.find({});
 };
+
+Account.statics.findByMember = function(username) {
+    return this.findOne({username});
+}
 
 Account.statics.updateByMember = function(username, payload) {
     return this.findOneAndUpdate({username}, payload);

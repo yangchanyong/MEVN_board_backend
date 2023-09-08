@@ -30,22 +30,24 @@ router.post('/join', isNotLoggedIn, async (req, res, next) => {
 
 router.post('/login', isNotLoggedIn, (req, res, next) => {
     console.log("호출되니..?")
+    console.log('login user ->', req.body);
     // const {username, pw} = req.body;
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', (err, member, info) => {
         if(err) {
             console.error(err);
             console.log("???")
 
             return next(err);
         }
-        if(!user) {
-            console.log(user);
-            return res.redirect(`/?loginError=${info.message}`);
+        if(!member) {
+            console.log(member+"왜 없지?");
+            console.log(info)
+            return res.redirect(`/auth/?loginError=${info.message}`);
         }
-        return req.login(user, loginError => {
+        return req.login(member, loginError => {
             if(loginError) {
                 console.error(loginError);
-                console.log(user+"!!!");
+                console.log(member+"!!!");
                 return next(loginError);
             }
             return res.json({message:"로그인"});

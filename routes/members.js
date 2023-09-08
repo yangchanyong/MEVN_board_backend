@@ -28,6 +28,12 @@ const memberList = router.get('/memberList', (req, res) => {
         .catch(err => res.status(500).send(err));
 });
 
+const findOneMember = router.get('/:username', (req, res) => {
+    Member.findByMember(req.params.username, req.body)
+        .then(member => res.send(member))
+        .catch(err => res.status(500).send(err));
+});
+
 const updateMember = router.put('/:username', (req, res) => {
     Member.updateByMember(req.params.username, req.body)
         .then(member => res.send(member))
