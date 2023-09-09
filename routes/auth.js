@@ -50,7 +50,8 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
                 console.log(member+"!!!");
                 return next(loginError);
             }
-            return res.json({message:"로그인"});
+            // return res.json({message:"로그인"});
+            return res.send(member);
         });
     })(req, res, next);
 });

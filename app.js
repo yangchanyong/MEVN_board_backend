@@ -27,7 +27,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     cookie: {
         httpOnly:true,
-        secure: false,
+        secure: false
     },
 }));
 
@@ -71,8 +71,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+const uri = process.env.MONGODB_URI;
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', function(){
