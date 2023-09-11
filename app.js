@@ -27,7 +27,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     cookie: {
         httpOnly:true,
-        secure: false
+        secure: false // https일경우 true
     },
 }));
 
@@ -53,6 +53,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const Member = require('./models/member');
+const url = require("url");
 // const router = require('./router')(app, Member);
 app.use('/auth', require('./routes/members'));
 
@@ -73,6 +74,7 @@ app.use(function(err, req, res, next) {
 });
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', function(){
