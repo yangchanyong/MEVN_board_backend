@@ -1,0 +1,88 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"aed0ac46-7238-47ef-9c03-45a0cc590fbf\" name=\"변경\" comment=\"passport 금일 작업분 커밋 밋 푸쉬\">\r\n      <change beforePath=\"$PROJECT_DIR$/.env\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.env\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/models/member.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/member.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/node_modules/.package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/node_modules/.package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/passport/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/passport/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/passport/localStrategy.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/passport/localStrategy.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/auth.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/routes/auth.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/members.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/routes/members.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/routes/middlewares.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/routes/middlewares.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/yarn.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/yarn.lock\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$/..\" value=\"master\" />\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 6\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2USwmAEQMxesHWZ5BTj6jcj4lQ8\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;feater/passport__login&quot;,\r\n    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.2&quot;,\r\n    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.2&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/workspaces/workspace-express&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\workspaces\\workspace-express\\board-back\\model\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"애플리케이션 수준\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"디폴트 작업\">\r\n      <changelist id=\"aed0ac46-7238-47ef-9c03-45a0cc590fbf\" name=\"변경\" comment=\"\" />\r\n      <created>1692946447347</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1692946447347</updated>\r\n      <workItem from=\"1692946449194\" duration=\"5114000\" />\r\n      <workItem from=\"1693145786172\" duration=\"704000\" />\r\n      <workItem from=\"1693189065765\" duration=\"16349000\" />\r\n      <workItem from=\"1693283549832\" duration=\"12221000\" />\r\n      <workItem from=\"1693299828665\" duration=\"55000\" />\r\n      <workItem from=\"1693448492371\" duration=\"10934000\" />\r\n      <workItem from=\"1693542106532\" duration=\"10016000\" />\r\n      <workItem from=\"1693976314953\" duration=\"2083000\" />\r\n      <workItem from=\"1693985819247\" duration=\"217000\" />\r\n      <workItem from=\"1693986110678\" duration=\"7018000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시\">\r\n      <created>1693299104374</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1693299104374</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시\">\r\n      <created>1693299130424</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1693299130424</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"passport 금일 작업분 커밋 밋 푸쉬\">\r\n      <created>1693483368495</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1693483368495</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시\" />\r\n    <MESSAGE value=\"passport 금일 작업분 커밋 밋 푸쉬\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"passport 금일 작업분 커밋 밋 푸쉬\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision bace9aff71daca0aec608d9dd6072e8e6a55d700)
++++ b/.idea/workspace.xml	(date 1694415465736)
+@@ -5,20 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="passport 금일 작업분 커밋 밋 푸쉬">
+-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/member.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/member.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/passport/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/passport/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/passport/localStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/passport/localStrategy.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/members.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/routes/middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/middlewares.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -44,9 +31,9 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 6
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 6
++}</component>
+   <component name="ProjectId" id="2USwmAEQMxesHWZ5BTj6jcj4lQ8" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+@@ -94,6 +81,7 @@
+       <workItem from="1693976314953" duration="2083000" />
+       <workItem from="1693985819247" duration="217000" />
+       <workItem from="1693986110678" duration="7018000" />
++      <workItem from="1694398651590" duration="2042000" />
+     </task>
+     <task id="LOCAL-00001" summary="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시">
+       <created>1693299104374</created>
+@@ -116,14 +104,34 @@
+       <option name="project" value="LOCAL" />
+       <updated>1693483368495</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="passport 금일 작업분 커밋 밋 푸쉬">
++      <option name="closed" value="true" />
++      <created>1694002980948</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1694002980948</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시" />
++    <MESSAGE value="Merge remote-tracking branch 'origin/feater/passport_login' into feater/passport_login&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;app.js&#10;#&#9;passport/index.js&#10;#&#9;passport/localStrategy.js&#10;#&#9;routes/auth.js&#10;#&#9;routes/middlewares.js&#10;#&#9;yarn.lock" />
+     <MESSAGE value="passport 금일 작업분 커밋 밋 푸쉬" />
+     <option name="LAST_COMMIT_MESSAGE" value="passport 금일 작업분 커밋 밋 푸쉬" />
+   </component>

@@ -80,9 +80,4 @@ db.once('open', function(){
 });
 
 
-/* passport login start */
-
-
-
-/* passport login end */
 module.exports = app;
