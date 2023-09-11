@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../board-back.iml" filepath="$PROJECT_DIR$/../board-back.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MEVN_Board_Backend.iml" filepath="$PROJECT_DIR$/.idea/MEVN_Board_Backend.iml" />
     </modules>
   </component>
 </project>
