@@ -9,16 +9,24 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require('cors')
 
+
+/* cors 설정 시작 */
+const corsOptions = {
+    origin: 'http://localhhost:3000', // 배포시 주석
+    // origin: 'https://pf6.chanyongyang.com:3000', // 배포시 주석 해제
+    credentials: true
+}
+
+app.use(cors(corsOptions));
+/* cors 설정 끝 */
+
+/* passport start */
 const passportConfig = require('./passport');
-// const LocalStrategy = require('passport-local').Strategy;
-const LocalStrategy = require('passport-local');
-
-// const authRouter = require('./routes/auth');
 const session = require('express-session');
 const passport = require('passport');
 passportConfig();
-
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(
     session({
@@ -30,11 +38,10 @@ app.use(
         secure: false // https일경우 true
     },
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use('/auth', require('./routes/auth'));
+/* passport end */
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,15 +54,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.use('/auth/signup', require('./routes/member/register'))
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 const Member = require('./models/member');
-const url = require("url");
 // const router = require('./router')(app, Member);
-app.use('/auth', require('./routes/members'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -72,6 +76,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+/* MongoDB connect start */
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -80,6 +86,7 @@ db.on('error', console.error);
 db.once('open', function(){
   console.log("Connection Success");
 });
+/* MongoDB connect end */
 
 
 module.exports = app;
