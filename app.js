@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const bodyParser = require("body-parser");
 const app = express();
 
+
 const passportConfig = require('./passport');
 // const LocalStrategy = require('passport-local').Strategy;
 const LocalStrategy = require('passport-local');
