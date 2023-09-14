@@ -9,18 +9,14 @@ const Account = new mongoose.Schema({
     updateDate:{type:Date, default: Date.now()}
 });
 
-// Account.methods.hashPassword = async function() {
-//     try {
-//         const salt = await bcrypt.genSalt(10);
-//         this.pw = await bcrypt.hash(req.body.pw, 10);
-//     }catch (err) {
-//         throw err;
-//     }
-// }
 
-Account.statics.create = async function(payload) {
+Account.statics.create = function(payload) {
     const member = new this(payload);
-    member.pw = await bcrypt.hash(payload.pw, 10);
+    console.log(payload)
+    member.username = payload.username;
+    // member.pw = bcrypt.hash(payload.pw, 10);
+    member.pw = payload.pw;
+    member.nickName = payload.nickName;
     return member.save();
 };
 

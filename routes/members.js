@@ -4,7 +4,8 @@ const Member = require('../models/member');
 const register = router.post('/signup', (req, res) => {
     Member.create(req.body)
         .then(member => res.send(member))
-        .catch(err => res.status(500).send(err));
+        // .catch(err => res.status(500).send(err));
+        .catch(err => res.status(500).send({message: "알 수 없는 error", err}));
 });
 
 // const register = router.post('/signup', async (req, res) => {

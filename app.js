@@ -41,6 +41,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/auth', require('./routes/auth'));
+app.use('/auth', require('./routes/members'));
 /* passport end */
 
 // view engine setup

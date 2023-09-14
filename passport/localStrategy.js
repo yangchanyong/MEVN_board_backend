@@ -11,7 +11,6 @@ module.exports = () => {
             {
                 usernameField : 'username',
                 passwordField : 'pw',
-                // session : true
             },
             async (username, pw, done) => {
                 try {
@@ -24,7 +23,7 @@ module.exports = () => {
                         if(result) {
                             return done(null, exUser);
                         }else {
-                            done(null, false, {message : '비밀번호가 일치하지 않습니다.'})
+                            done(null, false, {message : '비밀번호가 일치 하지 않습니다.'})
                         }
                         done(null, false, {message : '가입되지 않은 회원입니다.'})
                     }

@@ -7,26 +7,27 @@ const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
 
 const router = express.Router();
 
-router.post('/join', isNotLoggedIn, async (req, res, next) => {
-    try {
-     const {username, nickName, pw} = req.body
-     exMember = await Member.findOne({where: {username}})
-     if(exMember) {
-         return res.redirect('/join?error=exists')
-     }
-     // 비밀번호 저장
-     const hash = await bcrypt.hash(pw, 12)
-     await Member.create({
-         username,
-         nickName,
-         pw : hash
-     })
-     return res.redirect('/')
-    }catch (err) {
-        console.error(err);
-        next(err);
-    }
-})
+// members에서 회원가입을 구현해놨기에 주석처리
+// router.post('/join', isNotLoggedIn, async (req, res, next) => {
+//     try {
+//      const {username, nickName, pw} = req.body
+//      exMember = await Member.findOne({where: {username}})
+//      if(exMember) {
+//          return res.redirect('/join?error=exists')
+//      }
+//      // 비밀번호 저장
+//      const hash = await bcrypt.hash(pw, 12)
+//      await Member.create({
+//          username,
+//          nickName,
+//          pw : hash
+//      })
+//      return res.redirect('/')
+//     }catch (err) {
+//         console.error(err);
+//         next(err);
+//     }
+// })
 
 router.post('/login', isNotLoggedIn, (req, res, next) => {
     console.log("호출되니..?")

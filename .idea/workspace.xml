@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="passport 로그인 기능 구현 완료">
+    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="passport 로그인 완료">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__3_57__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-11__3_57__________.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/member.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/member.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passport/localStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/passport/localStrategy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/members.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,25 +50,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feather/cors",
-    "javascript.nodejs.core.library.configured.version": "18.14.2",
-    "javascript.nodejs.core.library.typings.version": "18.14.2",
-    "last_opened_file_path": "C:/workspaces/workspace-express/board-back/bin/www",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.2&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/workspaces/workspace-express/board-back/bin/www&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\workspaces\workspace-express\board-back\model" />
@@ -89,6 +99,9 @@
       <workItem from="1693986110678" duration="7018000" />
       <workItem from="1694398651590" duration="3374000" />
       <workItem from="1694417408707" duration="10647000" />
+      <workItem from="1694506698765" duration="1177000" />
+      <workItem from="1694586784583" duration="2685000" />
+      <workItem from="1694668270441" duration="6881000" />
     </task>
     <task id="LOCAL-00001" summary="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시">
       <created>1693299104374</created>
