@@ -13,10 +13,7 @@ const Account = new mongoose.Schema({
 Account.statics.create = function(payload) {
     const member = new this(payload);
     console.log(payload)
-    member.username = payload.username;
-    // member.pw = bcrypt.hash(payload.pw, 10);
-    member.pw = payload.pw;
-    member.nickName = payload.nickName;
+    member.pw = bcrypt.hash(payload.pw, 10);
     return member.save();
 };
 

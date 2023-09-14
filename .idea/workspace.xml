@@ -7,16 +7,11 @@
     <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="passport 로그인 완료">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__3_57__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-11__3_57__________.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/member.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/member.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/passport/localStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/passport/localStrategy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/members.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

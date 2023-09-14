@@ -9,24 +9,23 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const bodyParser = require("body-parser");
 const app = express();
+
+const passportConfig = require('./passport');
+const session = require('express-session');
+const passport = require('passport');
 const cors = require('cors')
-
-
+passportConfig();
 /* cors 설정 시작 */
+
 const corsOptions = {
     origin: 'http://localhhost:3000', // 배포시 주석
     // origin: 'https://pf6.chanyongyang.com:3000', // 배포시 주석 해제
     credentials: true
 }
-
 app.use(cors(corsOptions));
-/* cors 설정 끝 */
 
+/* cors 설정 끝 */
 /* passport start */
-const passportConfig = require('./passport');
-const session = require('express-session');
-const passport = require('passport');
-passportConfig();
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(
     session({
@@ -40,7 +39,9 @@ app.use(
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use('/auth', require('./routes/auth'));
+
 app.use('/auth', require('./routes/members'));
 /* passport end */
 
