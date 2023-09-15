@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="passport 로그인 완료">
+    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="app.js 수정">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________2.xml" afterDir="false" />
@@ -29,7 +30,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="master" />
-        <entry key="$PROJECT_DIR$" value="feather/passport" />
+        <entry key="$PROJECT_DIR$" value="feater/passport_login" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,9 +95,7 @@
       <workItem from="1693986110678" duration="7018000" />
       <workItem from="1694398651590" duration="3374000" />
       <workItem from="1694417408707" duration="10647000" />
-      <workItem from="1694506698765" duration="1177000" />
-      <workItem from="1694586784583" duration="2685000" />
-      <workItem from="1694668270441" duration="6881000" />
+      <workItem from="1694755343032" duration="1854000" />
     </task>
     <task id="LOCAL-00001" summary="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시">
       <created>1693299104374</created>
@@ -135,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694437105988</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="app.js 수정">
+      <option name="closed" value="true" />
+      <created>1694676525028</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694676525029</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +165,8 @@
     <MESSAGE value="passport 금일 작업분 커밋 밋 푸쉬" />
     <MESSAGE value="passport 로그인 기능 구현 80% 완료" />
     <MESSAGE value="passport 로그인 기능 구현 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="passport 로그인 기능 구현 완료" />
+    <MESSAGE value="임시 커밋" />
+    <MESSAGE value="app.js 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="app.js 수정" />
   </component>
 </project>
