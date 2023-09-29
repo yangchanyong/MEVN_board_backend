@@ -13,13 +13,21 @@ const cors = require('cors')
 
 
 /* cors 설정 시작 */
-const corsOptions = {
-    origin: 'http://localhhost:3000', // 배포시 주석
-    // origin: 'https://pf6.chanyongyang.com:3000', // 배포시 주석 해제
-    credentials: true
-}
+const whitelist = ['http://localhost:3000'];
+// const corsOptions = {
+//     origin: function(origin, callback) {
+//         if(whitelist.indexOf(origin) !== -1) {
+//             callback(null, true);
+//         }else {
+//             callback(new Error('허용 되지않은 cors 요청 입니다.'));
+//         }
+//     },
+//     // origin: 'http://localhhost:3000', // 배포시 주석
+//     // origin: 'https://pf6.chanyongyang.com', // 배포시 주석 해제
+//     credentials: true
+// }
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 /* cors 설정 끝 */
 
 /* passport start */
@@ -40,7 +48,7 @@ app.use(
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/auth', require('./routes/auth'));
+app.use('/api/auth', require('./routes/auth'));
 /* passport end */
 
 // view engine setup

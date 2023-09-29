@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="passport 로그인 기능 구현 완료">
+    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="cors 허용">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11_(011)_오후_9_53,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__3_57__________.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11_오후_3_57,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passport/localStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/passport/localStrategy.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +52,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "feather/cors",
-    "javascript.nodejs.core.library.configured.version": "18.14.2",
-    "javascript.nodejs.core.library.typings.version": "18.14.2",
+    "javascript.nodejs.core.library.configured.version": "18.16.0",
+    "javascript.nodejs.core.library.typings.version": "18.16.0",
     "last_opened_file_path": "C:/workspaces/workspace-express/board-back/bin/www",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -89,6 +95,7 @@
       <workItem from="1693986110678" duration="7018000" />
       <workItem from="1694398651590" duration="3374000" />
       <workItem from="1694417408707" duration="10647000" />
+      <workItem from="1695955022547" duration="5199000" />
     </task>
     <task id="LOCAL-00001" summary="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시">
       <created>1693299104374</created>
@@ -127,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694437105988</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="cors 허용">
+      <option name="closed" value="true" />
+      <created>1694488428584</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694488428584</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +165,7 @@
     <MESSAGE value="passport 금일 작업분 커밋 밋 푸쉬" />
     <MESSAGE value="passport 로그인 기능 구현 80% 완료" />
     <MESSAGE value="passport 로그인 기능 구현 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="passport 로그인 기능 구현 완료" />
+    <MESSAGE value="cors 허용" />
+    <option name="LAST_COMMIT_MESSAGE" value="cors 허용" />
   </component>
 </project>
