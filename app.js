@@ -9,7 +9,24 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require('cors');
 
+app.use(bodyParser.json());
+
+const whitelist = ['http://localhost:3000', "http://localhost:8080"];
+const corsOptions = {
+    origin: function(origin, callback) {
+        if(whitelist.indexOf(origin) !== -1) {
+            callback(null, true);
+        }else {
+            callback(new Error('허용 되지않은 cors 요청 입니다.'));
+        }
+    },
+    // origin: 'http://localhhost:3000', // 배포시 주석
+    // origin: 'https://pf6.chanyongyang.com', // 배포시 주석 해제
+    credentials: true
+}
+app.use(cors(corsOptions));
 
 const passportConfig = require('./passport');
 // const LocalStrategy = require('passport-local').Strategy;
@@ -30,12 +47,13 @@ app.use(
             httpOnly:true,
             secure: false
         },
-    }));
+    })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', require('./routes/auth'));
+app.use('/api/auth', require('./routes/auth'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -51,11 +69,10 @@ app.use('/', indexRouter);
 // app.use('/auth/signup', require('./routes/member/register'))
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
 
 const Member = require('./models/member');
 // const router = require('./router')(app, Member);
-app.use('/auth', require('./routes/members'));
+app.use('/api/auth', require('./routes/members'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

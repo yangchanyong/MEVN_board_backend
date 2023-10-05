@@ -52,8 +52,8 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
                 return next(loginError);
             }
             // return res.json({message:"로그인"});
-            // return res.send(member);
-            return res.redirect('/');
+            return res.send(member);
+            // return res.redirect('/');
         });
     })(req, res, next);
 });
