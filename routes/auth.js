@@ -58,10 +58,27 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
     })(req, res, next);
 });
    
-router.get('/logout', isLoggedIn, (req, res) => {
-    req.logout()
-    req.session.destroy();
-    res.redirect('/')
+router.post('/logout', isLoggedIn, (req, res, next) => {
+    req.logout((err) => {
+        if(err)  {
+            console.log(err)
+            return next(err)
+        }
+        res.clearCookie('connect.sid', {httpOnly: true})
+        req.session.destroy();
+        console.log('로그아웃 성공')
+        // res.redirect('/');
+        res.status(200).send({message: '성공!'});
+    })
 });
+
+router.post('/checkId', async function(req, res) {
+    let username = req.body.username;
+    let checkUsername = await Member.findOne({username : username});
+    if(checkUsername) {
+        return res.status(200)
+    }else {
+    }
+})
 
 module.exports = router;

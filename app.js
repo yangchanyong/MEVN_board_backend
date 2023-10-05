@@ -22,8 +22,6 @@ const corsOptions = {
             callback(new Error('허용 되지않은 cors 요청 입니다.'));
         }
     },
-    // origin: 'http://localhhost:3000', // 배포시 주석
-    // origin: 'https://pf6.chanyongyang.com', // 배포시 주석 해제
     credentials: true
 }
 app.use(cors(corsOptions));
