@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 const Member = require('../models/member');
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
+const {data} = require("express-session/session/cookie");
 
 const router = express.Router();
 
@@ -71,13 +72,35 @@ router.post('/logout', isLoggedIn, (req, res, next) => {
         res.status(200).send({message: '성공!'});
     })
 });
-
 router.post('/checkId', async function(req, res) {
     let username = req.body.username;
-    let checkUsername = await Member.findOne({username : username});
-    if(checkUsername) {
-        return res.status(200)
+    let checkUsername = await Member.findOne({username : username}, {_id:0, pw:0, nickName:0, regDate:0, updateDate:0});
+    if(!checkUsername) {
+        console.log('아이디 중복 '+checkUsername);
+        res.status(200).json({
+            checkUsername:false
+        })
     }else {
+        console.log('사용 가능한 id '+checkUsername)
+        res.status(200).json({
+            checkUsername:true
+        })
+    }
+})
+
+router.post('/checkNickName', async function(req, res) {
+    let nickName = req.body.nickName;
+    let checkNickName = await Member.findOne({nickName : nickName}, {_id:0, pw:0, username:0, regDate:0, updateDate:0});
+    if(checkNickName) {
+        console.log('닉네임 중복 ');
+        res.status(200).json({
+            checkNickName:false
+        })
+    }else {
+        console.log('사용 가능한 닉네임 ')
+        res.status(200).json({
+            checkNickName:true
+        })
     }
 })
 
