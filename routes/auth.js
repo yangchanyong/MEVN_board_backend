@@ -72,12 +72,14 @@ router.post('/logout', isLoggedIn, (req, res, next) => {
     })
 });
 
-router.post('/checkId', async function(req, res) {
+router.get('/checkId', async function(req, res) {
     let username = req.body.username;
-    let checkUsername = await Member.findOne({username : username});
+    let checkUsername = await Member.findOne({username : username}, {_id:0, pw:0, nickName:0, regDate:0, updateDate:0});
     if(checkUsername) {
-        return res.status(200)
+        console.log(checkUsername);
+        return res.send({message: '중복된 id입니다.'})
     }else {
+        return res.send({checkUsername:checkUsername})
     }
 })
 
