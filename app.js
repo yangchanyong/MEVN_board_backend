@@ -10,8 +10,8 @@ const indexRouter = require('./routes/index');
 const bodyParser = require("body-parser");
 const app = express();
 const cors = require('cors');
-
 app.use(bodyParser.json());
+
 
 const whitelist = ['http://localhost:3000', "http://localhost:8080"];
 const corsOptions = {

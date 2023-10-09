@@ -1,6 +1,8 @@
 const passport = require('passport');
 const local = require('./localStrategy');
+const jwt = require('./JWTStrategy')
 const Member = require('../models/member');
+
 
 module.exports = () => {
     passport.serializeUser((user, done) => {
@@ -13,6 +15,6 @@ module.exports = () => {
             .then(user => done(null, user))
             .catch(err => done(err));
     })
-
     local();
+    jwt();
 }
