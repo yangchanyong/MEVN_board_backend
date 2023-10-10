@@ -3,8 +3,11 @@ const passport = require('passport');
 
 const Member = require('../models/member');
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
-const jwt = require('jsonwebtoken')
-const {log} = require("debug");
+// const jwt = require('jsonwebtoken')
+const jwt = require('../jwt-util/jwt-util')
+const {redisClient} = require("../redis-util/redis-util");
+
+const authJwt = require('../midlewares/authJWT')
 
 const router = express.Router();
 
@@ -45,12 +48,29 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             if(loginError) {
                 return next(loginError);
             }
-            const token = jwt.sign(
-                {id:member.username, nickName:member.nickName},
-                'jwt'
-            )
-            console.log('token ='+token)
-            return res.json({token})
+            // const token = jwt.sign(
+            //     {id:member.username, nickName:member.nickName},
+            //     'jwt',
+            //     {
+            //         expiresIn: '1M'
+            //     }
+            // )
+            // console.log('token ='+token)
+            // return res.json({token})
+
+            const accessToken = jwt.sign(member);
+            const refreshToken = jwt.refresh();
+
+            redisClient.set(member.username, refreshToken);
+
+            res.status(200).send({
+                ok: true,
+                data: {
+                    accessToken,
+                    refreshToken,
+                },
+            })
+
             // return res.send({token})
         });
     })(req, res, next);
@@ -111,5 +131,10 @@ router.post('/jwt', passport.authenticate('jwt', {session:false}),
             next(error);
         }
     });
+
+
+router.get('/profile', authJwt);
+
+
 
 module.exports = router;

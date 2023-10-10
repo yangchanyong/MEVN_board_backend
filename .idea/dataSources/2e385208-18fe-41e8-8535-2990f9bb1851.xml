@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="mevn document">
   <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.49">
-    <root id="1">
-      <ServerVersion>6.0.9</ServerVersion>
-    </root>
+    <root id="1"/>
     <schema id="2" parent="1" name="MEVN"/>
-    <schema id="3" parent="1" name="test"/>
-    <schema id="4" parent="1" name="admin"/>
-    <schema id="5" parent="1" name="local"/>
+    <schema id="3" parent="1" name="admin"/>
+    <schema id="4" parent="1" name="local"/>
+    <schema id="5" parent="1" name="test"/>
   </database-model>
 </dataSource>

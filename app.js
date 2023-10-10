@@ -10,21 +10,22 @@ const indexRouter = require('./routes/index');
 const bodyParser = require("body-parser");
 const app = express();
 const cors = require('cors');
+
 app.use(bodyParser.json());
 
 
-const whitelist = ['http://localhost:3000', "http://localhost:8080"];
-const corsOptions = {
-    origin: function(origin, callback) {
-        if(whitelist.indexOf(origin) !== -1) {
-            callback(null, true);
-        }else {
-            callback(new Error('허용 되지않은 cors 요청 입니다.'));
-        }
-    },
-    credentials: true
-}
-app.use(cors(corsOptions));
+// const whitelist = ['http://localhost:3000', "http://localhost:8080"];
+// const corsOptions = {
+//     origin: function(origin, callback) {
+//         if(whitelist.indexOf(origin) !== -1) {
+//             callback(null, true);
+//         }else {
+//             callback(new Error('허용 되지않은 cors 요청 입니다.'));
+//         }
+//     },
+//     credentials: true
+// }
+// app.use(cors(corsOptions));
 
 const passportConfig = require('./passport');
 // const LocalStrategy = require('passport-local').Strategy;

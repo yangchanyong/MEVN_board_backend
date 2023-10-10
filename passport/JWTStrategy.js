@@ -22,7 +22,6 @@ const JWTVerify = async (jwtPayload, done) => {
 }
 module.exports = () => {
     console.log('jwt strategy')
-    // passport.use('jwt', new JWTStrategy(JWTConfig, JWTVerify))
     passport.use('jwt',
         new JWTStrategy(
             JWTConfig,JWTVerify
@@ -31,24 +30,3 @@ module.exports = () => {
 }
 
 
-// module.exports = () => {
-//     console.log('jwt starategy 생성')
-//     let opts = {}
-//     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-//     opts.secretOrKey = 'jwt';
-//     // opts.issuer = 'http://localhost:8080';
-//     // opts.audience = 'http://localhost:3000';
-//     passport.use(new JWTStrategy(opts, function(jwt_payload, done) {
-//         Member.findOne({id: jwt_payload.sub}, function(err, user) {
-//             if (err) {
-//                 return done(err, false);
-//             }
-//             if (user) {
-//                 console.log('통과')
-//                 return done(null, user);
-//             } else {
-//                 return done(null, false);
-//             }
-//         });
-//     }));
-// }
