@@ -11,40 +11,23 @@ const authJwt = require('../midlewares/authJWT')
 
 const router = express.Router();
 
-// members에서 회원가입을 구현해놨기에 주석처리
-// router.post('/join', isNotLoggedIn, async (req, res, next) => {
-//     try {
-//      const {username, nickName, pw} = req.body
-//      exMember = await Member.findOne({where: {username}})
-//      if(exMember) {
-//          return res.redirect('/join?error=exists')
-//      }
-//      // 비밀번호 저장
-//      const hash = await bcrypt.hash(pw, 12)
-//      await Member.create({
-//          username,
-//          nickName,
-//          pw : hash
-//      })
-//      return res.redirect('/')
-//     }catch (err) {
-//         console.error(err);
-//         next(err);
-//     }
-// })
 
+// login
 router.post('/login', isNotLoggedIn, (req, res, next) => {
+    // local 전략으로 로그인 (/passport/localStrategy 실행)
     passport.authenticate('local', (err, member, info) => {
         if(err) {
             console.error(err);
             console.log("???")
-
             return next(err);
         }
+        // member가 없을경우 실행
         if(!member) {
             return res.redirect(`/auth/?loginError=${info.message}`);
         }
+        // member가 있을경우 실행
         return req.login(member, {session:false}, (loginError) => {
+            // 에러 발생시 실행
             if(loginError) {
                 return next(loginError);
             }
@@ -58,12 +41,16 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             // console.log('token ='+token)
             // return res.json({token})
 
+            // 액세스 토큰 생성
             const accessToken = jwt.sign(member);
+            // 리프레시 토큰 생성
             const refreshToken = jwt.refresh();
 
+            // redis
             redisClient.set(member.username, refreshToken);
 
-            res.status(200).send({
+            // client에 access, refresh token 반환
+            res.status(200).json({
                 ok: true,
                 data: {
                     accessToken,
@@ -89,9 +76,15 @@ router.post('/logout', isLoggedIn, (req, res, next) => {
         res.status(200).send({message: '성공!'});
     })
 });
+
+
+// username 중복체크
 router.post('/checkId', async function(req, res) {
+    // front에서 전송한 username 변수에 저장
     let username = req.body.username;
+    // 사용된 username이 있는지 확인
     let checkUsername = await Member.findOne({username : username}, {_id:0, pw:0, nickName:0, regDate:0, updateDate:0});
+    // username이 중복일 경우
     if(checkUsername) {
         console.log('아이디 중복 '+checkUsername);
         res.status(200).json({
@@ -99,22 +92,28 @@ router.post('/checkId', async function(req, res) {
         })
     }else {
         console.log('사용 가능한 id '+checkUsername)
+        // username이 중복이 아닐경우 json형태로 전송
         res.status(200).json({
             checkUsername:true
         })
     }
 })
 
+// nickName 중복체크
 router.post('/checkNickName', async function(req, res) {
+    // front에서 전송된 nickName 변수에 저장
     let nickName = req.body.nickName;
+    // 전송된 nickName의 값이 있는지 db 조회
     let checkNickName = await Member.findOne({nickName : nickName}, {_id:0, pw:0, username:0, regDate:0, updateDate:0});
     if(checkNickName) {
         console.log('닉네임 중복 ');
+        // nickName이 중복일경우
         res.status(200).json({
             checkNickName:false
         })
     }else {
         console.log('사용 가능한 닉네임 ')
+        // nickName 사용 가능할 경우
         res.status(200).json({
             checkNickName:true
         })
