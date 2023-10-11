@@ -14,18 +14,18 @@ const cors = require('cors');
 app.use(bodyParser.json());
 
 
-// const whitelist = ['http://localhost:3000', "http://localhost:8080"];
-// const corsOptions = {
-//     origin: function(origin, callback) {
-//         if(whitelist.indexOf(origin) !== -1) {
-//             callback(null, true);
-//         }else {
-//             callback(new Error('허용 되지않은 cors 요청 입니다.'));
-//         }
-//     },
-//     credentials: true
-// }
-// app.use(cors(corsOptions));
+const whitelist = ['http://localhost:3000', "http://localhost:8080"];
+const corsOptions = {
+    origin: function(origin, callback) {
+        if(whitelist.indexOf(origin) !== -1) {
+            callback(null, true);
+        }else {
+            callback(new Error('허용 되지않은 cors 요청 입니다.'));
+        }
+    },
+    credentials: true
+}
+app.use(cors(corsOptions));
 
 const passportConfig = require('./passport');
 // const LocalStrategy = require('passport-local').Strategy;
@@ -48,9 +48,9 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //         },
 //     })
 // );
-
+//
 app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.session());
 
 app.use('/api/auth', require('./routes/auth'));
 

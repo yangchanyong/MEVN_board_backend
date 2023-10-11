@@ -8,6 +8,7 @@ const jwt = require('../jwt-util/jwt-util')
 const {redisClient} = require("../redis-util/redis-util");
 
 const authJwt = require('../midlewares/authJWT')
+const refresh = require("../jwt-util/refresh");
 
 const router = express.Router();
 
@@ -134,6 +135,7 @@ router.post('/jwt', passport.authenticate('jwt', {session:false}),
 
 router.get('/profile', authJwt);
 
+router.get('/refresh', refresh);
 
 
 module.exports = router;
