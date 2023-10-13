@@ -11,7 +11,7 @@ module.exports = {
         };
         return jwt.sign(payload, secret, {
             algorithm: 'HS256',
-            expiresIn: '1h',
+            expiresIn: '1m',
         });
     },
     verify: (token) => {
@@ -33,7 +33,7 @@ module.exports = {
     refresh: () => {
         return jwt.sign({}, secret, {
             algorithm: 'HS256',
-            expiresIn: '14d',
+            expiresIn: '1m',
         });
     },
     refreshVerify: async (token, username) => {
@@ -44,6 +44,7 @@ module.exports = {
             if(token === data) {
                 try {
                     jwt.verify(token, secret);
+
                     return true;
                 } catch (err) {
                     return false;

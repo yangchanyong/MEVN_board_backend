@@ -49,6 +49,8 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
 
             // redis
             redisClient.set(member.username, refreshToken);
+            // redis refreshToken 만료시간 설정
+            redisClient.expire(member.username, 60*60*24*14)
 
             // client에 access, refresh token 반환
             res.status(200).json({
