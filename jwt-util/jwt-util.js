@@ -7,11 +7,11 @@ module.exports = {
     sign: (member) => {
         const payload = {
             id:member.username,
-            nickName:member.nickName
+            nickName:member.nickName,
         };
         return jwt.sign(payload, secret, {
             algorithm: 'HS256',
-            expiresIn: '1m',
+            expiresIn: '1h',
         });
     },
     verify: (token) => {

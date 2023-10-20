@@ -23,7 +23,7 @@ const corsOptions = {
             callback(new Error('허용 되지않은 cors 요청 입니다.'));
         }
     },
-    credentials: true
+    allowCredentials: true
 }
 app.use(cors(corsOptions));
 
@@ -51,6 +51,13 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //
 app.use(passport.initialize());
 // app.use(passport.session());
+
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+//     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//     next();
+// });
 
 app.use('/api/auth', require('./routes/auth'));
 

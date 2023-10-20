@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const refresh = async (req, res) => {
     // access token과 refresh token의 존재 유무를 체크합니다.
     /* vuex의 access, refresh token 값을 받아와 확인 */
+    // authorization = accessToken / refresh = refreshToken
     if (req.headers.authorization && req.headers.refresh) {
         const authToken = req.headers.authorization.split('Bearer ')[1];
         const refreshToken = req.headers.refresh;

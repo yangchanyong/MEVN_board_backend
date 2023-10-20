@@ -52,6 +52,11 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             // redis refreshToken 만료시간 설정
             redisClient.expire(member.username, 60*60*24*14)
 
+            // 토큰에 만료시간이 있기에, 만료시간을 정할 필요가 없음
+            res.header({
+                'Authorization' : `Bearer ${accessToken}`,
+                'refresh' : refreshToken
+            })
             // client에 access, refresh token 반환
             res.status(200).json({
                 ok: true,
@@ -72,9 +77,13 @@ router.post('/logout', isLoggedIn, (req, res, next) => {
             console.log(err)
             return next(err)
         }
-        res.clearCookie('connect.sid', {httpOnly: true})
-        req.session.destroy();
-        console.log('로그아웃 성공')
+        res.header({
+            'Authorization' : '',
+            'refresh' : ''
+        })
+        // res.clearCookie('connect.sid', {httpOnly: true})
+        // req.session.destroy();
+        // console.log('로그아웃 성공')
         // res.redirect('/');
         res.status(200).send({message: '성공!'});
     })
@@ -137,7 +146,7 @@ router.post('/jwt', passport.authenticate('jwt', {session:false}),
 
 router.get('/profile', authJwt);
 
-router.get('/refresh', refresh);
+router.post('/refresh', refresh);
 
 
 module.exports = router;
