@@ -15,3 +15,6 @@ exports.isNotLoggedIn = (req, res, next) => {
     }
 };
 
+exports.isToken = (req, res, next) => {
+
+}

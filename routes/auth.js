@@ -53,16 +53,20 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             redisClient.expire(member.username, 60*60*24*14)
 
             // 토큰에 만료시간이 있기에, 만료시간을 정할 필요가 없음
-            res.header({
-                'Authorization' : `Bearer ${accessToken}`,
-                'refresh' : refreshToken
-            })
+            // res.header({
+            //     'Authorization' : `Bearer ${accessToken}`,
+            //     'refresh' : refreshToken
+            // })
             // client에 access, refresh token 반환
             res.status(200).json({
                 ok: true,
                 data: {
                     accessToken,
                     refreshToken,
+                    userInfo: {
+                        username: member.username,
+                        nickName: member.nickName,
+                    }
                 },
             })
 
@@ -71,22 +75,46 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
     })(req, res, next);
 });
    
-router.post('/logout', isLoggedIn, (req, res, next) => {
-    req.logout((err) => {
-        if(err)  {
-            console.log(err)
-            return next(err)
-        }
-        res.header({
-            'Authorization' : '',
-            'refresh' : ''
-        })
+router.post('/logout', (req, res, next) => {
+    console.log('로그아웃 통신')
+    // req.logout(member, {session:false}, (err) => {
+    //     if(err)  {
+    //         console.log(err)
+    //         return next(err)
+    //     }
+
+        // res.header({
+        //     'Authorization' : '',
+        //     'refresh' : ''
+        // })
         // res.clearCookie('connect.sid', {httpOnly: true})
         // req.session.destroy();
         // console.log('로그아웃 성공')
         // res.redirect('/');
-        res.status(200).send({message: '성공!'});
-    })
+
+    // redisClient.del(req.headers.userInfo)
+    try {
+        // const accessToken = req.headers['authorization'];
+        if(req.headers['authorization']) {
+            const accessToken = req.headers['authorization'].split('Bearer ')[1];
+            console.log(accessToken)
+            const decode = jwt.verify(accessToken);
+            console.log('decoded = ', decode)
+            redisClient.del(decode.id)
+            res.status(200).send({message: '성공!'});
+        }else {
+            refresh(req, res)
+                .then(() => {
+                    console.log('success')
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+    }
+    catch (e) {
+        console.log(e)
+    }
 });
 
 

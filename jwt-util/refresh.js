@@ -5,9 +5,9 @@ const refresh = async (req, res) => {
     // access token과 refresh token의 존재 유무를 체크합니다.
     /* vuex의 access, refresh token 값을 받아와 확인 */
     // authorization = accessToken / refresh = refreshToken
-    if (req.headers.authorization && req.headers.refresh) {
-        const authToken = req.headers.authorization.split('Bearer ')[1];
-        const refreshToken = req.headers.refresh;
+    if (req.headers['authorization'] && req.headers['refresh']) {
+        const authToken = req.headers['authorization'].split('Bearer ')[1];
+        const refreshToken = req.headers['refresh'];
 
         // access token 검증 -> expired여야 함.
         const authResult = verify(authToken);
@@ -17,6 +17,7 @@ const refresh = async (req, res) => {
 
         // 디코딩 결과가 없으면 권한이 없음을 응답.
         if (decoded === null) {
+            console.log('권한도 없음')
             res.status(401).send({
                 ok: false,
                 message: 'No authorized!',
@@ -37,9 +38,9 @@ const refresh = async (req, res) => {
                 });
             } else {
                 // 2. access token이 만료되고, refresh token은 만료되지 않은 경우 => 새로운 access token을 발급
-                const newAccessToken = sign(user);
+                const newAccessToken = sign(member);
 
-                res.status(200).send({ // 새로 발급한 access token과 원래 있던 refresh token 모두 클라이언트에게 반환합니다.
+                res.status(200).json({ // 새로 발급한 access token과 원래 있던 refresh token 모두 클라이언트에게 반환합니다.
                     ok: true,
                     data: {
                         accessToken: newAccessToken,
@@ -55,6 +56,7 @@ const refresh = async (req, res) => {
             });
         }
     } else { // access token 또는 refresh token이 헤더에 없는 경우
+        console.log('헤더에 값 없음')
         res.status(400).send({
             ok: false,
             message: 'Access token and refresh token are need for refresh!',

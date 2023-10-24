@@ -1,4 +1,4 @@
-const promisify = require('util');
+const {promisify} = require('util');
 const jwt = require('jsonwebtoken');
 const redisClient = require('../redis-util/redis-util')
 const secret = process.env.JWT_SECRET;
@@ -11,7 +11,7 @@ module.exports = {
         };
         return jwt.sign(payload, secret, {
             algorithm: 'HS256',
-            expiresIn: '1h',
+            expiresIn: '15s',
         });
     },
     verify: (token) => {
@@ -33,7 +33,7 @@ module.exports = {
     refresh: () => {
         return jwt.sign({}, secret, {
             algorithm: 'HS256',
-            expiresIn: '1m',
+            expiresIn: '14d',
         });
     },
     refreshVerify: async (token, username) => {
