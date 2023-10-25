@@ -1,6 +1,6 @@
 const {promisify} = require('util');
 const jwt = require('jsonwebtoken');
-const redisClient = require('../redis-util/redis-util')
+const { redisClient } = require('../redis-util/redis-util')
 const secret = process.env.JWT_SECRET;
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
         };
         return jwt.sign(payload, secret, {
             algorithm: 'HS256',
-            expiresIn: '15s',
+            expiresIn: '5s',
         });
     },
     verify: (token) => {
@@ -33,27 +33,36 @@ module.exports = {
     refresh: () => {
         return jwt.sign({}, secret, {
             algorithm: 'HS256',
-            expiresIn: '14d',
+            expiresIn: '5s',
         });
     },
     refreshVerify: async (token, username) => {
-        const getAsync = promisify(redisClient.redisClient.get).bind(redisClient);
+        console.log('들어오냐?')
+        const getAsync = promisify(redisClient.get).bind(redisClient);
+        console.log('jwtUtil getAsync = ', getAsync)
 
         try {
             const data = await getAsync(username);
+            // const data = await redisClient.get(username)
+            console.log('data = ', data)
+            console.log('token = ', token)
             if(token === data) {
                 try {
                     jwt.verify(token, secret);
-
+                    console.log('통과됐니?')
                     return true;
                 } catch (err) {
-                    return false;
+                    return {
+                        ok: false,
+                    };
                 }
 
             }else {
+                console.log('이상하네')
                 return false;
             }
         } catch (err) {
+            console.log('catch로 빠짐')
             return false;
         }
     },

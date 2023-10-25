@@ -12,6 +12,9 @@ const refresh = require("../jwt-util/refresh");
 
 const router = express.Router();
 
+const secret = process.env.JWT_SECRET;
+const jsonwebtoken = require('jsonwebtoken');
+
 
 // login
 router.post('/login', isNotLoggedIn, (req, res, next) => {
@@ -43,14 +46,14 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             // return res.json({token})
 
             // 액세스 토큰 생성
-            const accessToken = jwt.sign(member);
+            const accessToken = `Bearer ${jwt.sign(member)}`;
             // 리프레시 토큰 생성
             const refreshToken = jwt.refresh();
 
             // redis
             redisClient.set(member.username, refreshToken);
             // redis refreshToken 만료시간 설정
-            redisClient.expire(member.username, 60*60*24*14)
+            redisClient.expire(member.username, 5)
 
             // 토큰에 만료시간이 있기에, 만료시간을 정할 필요가 없음
             // res.header({
@@ -63,10 +66,6 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
                 data: {
                     accessToken,
                     refreshToken,
-                    userInfo: {
-                        username: member.username,
-                        nickName: member.nickName,
-                    }
                 },
             })
 
@@ -77,39 +76,26 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
    
 router.post('/logout', (req, res, next) => {
     console.log('로그아웃 통신')
-    // req.logout(member, {session:false}, (err) => {
-    //     if(err)  {
-    //         console.log(err)
-    //         return next(err)
-    //     }
-
-        // res.header({
-        //     'Authorization' : '',
-        //     'refresh' : ''
-        // })
-        // res.clearCookie('connect.sid', {httpOnly: true})
-        // req.session.destroy();
-        // console.log('로그아웃 성공')
-        // res.redirect('/');
-
-    // redisClient.del(req.headers.userInfo)
     try {
-        // const accessToken = req.headers['authorization'];
-        if(req.headers['authorization']) {
+        if(req.headers['authorization'] && req.headers['refresh']) {
+            
             const accessToken = req.headers['authorization'].split('Bearer ')[1];
             console.log(accessToken)
-            const decode = jwt.verify(accessToken);
-            console.log('decoded = ', decode)
-            redisClient.del(decode.id)
-            res.status(200).send({message: '성공!'});
+            // const decode = jwt.verify(accessToken);
+            // if(decode.ok) {
+            //     console.log('decoded = ', decode)
+            //     redisClient.del(decode.id)
+            //     return res.status(200).send({message: '성공!'});
+            // }else {
+            const decode = jsonwebtoken.decode(accessToken);
+            console.log('auth.js decoded = ', decode)
+            redisClient.del(decode.id);
+            return res.status(200).send({message: '성공!2'})
+            // }
+            
         }else {
-            refresh(req, res)
-                .then(() => {
-                    console.log('success')
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
+            console.log('토큰없음')
+            return res.status(403).json({message: '로그인한 상태가 아닙니다.'})
         }
     }
     catch (e) {
@@ -174,7 +160,7 @@ router.post('/jwt', passport.authenticate('jwt', {session:false}),
 
 router.get('/profile', authJwt);
 
-router.post('/refresh', refresh);
+router.post('/refresh', refresh)
 
 
 module.exports = router;
