@@ -13,6 +13,7 @@ const cors = require('cors');
 
 app.use(bodyParser.json());
 
+
 const whitelist = ['http://localhost:3000', "http://localhost:8080"];
 const corsOptions = {
     origin: function(origin, callback) {
@@ -36,20 +37,27 @@ const passport = require('passport');
 passportConfig();
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
-app.use(
-    session({
-        resave: false,
-        saveUninitialized: false,
-        secret: process.env.COOKIE_SECRET,
-        cookie: {
-            httpOnly:true,
-            secure: false
-        },
-    })
-);
-
+// app.use(
+//     session({
+//         resave: false,
+//         saveUninitialized: false,
+//         secret: process.env.COOKIE_SECRET,
+//         cookie: {
+//             httpOnly:true,
+//             secure: false
+//         },
+//     })
+// );
+//
 app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.session());
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 
 app.use('/api/auth', require('./routes/auth'));
 

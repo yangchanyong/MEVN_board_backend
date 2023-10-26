@@ -11,6 +11,7 @@ module.exports = () => {
             {
                 usernameField : 'username',
                 passwordField : 'pw',
+                // session: false,
             },
             async (username, pw, done) => {
                 try {

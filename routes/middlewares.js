@@ -14,3 +14,7 @@ exports.isNotLoggedIn = (req, res, next) => {
         res.redirect(`/?error=${message}`);
     }
 };
+
+exports.isToken = (req, res, next) => {
+
+}

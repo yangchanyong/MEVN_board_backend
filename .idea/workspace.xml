@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="app.js 수정">
+    <list default="true" id="aed0ac46-7238-47ef-9c03-45a0cc590fbf" name="변경" comment="id, nickName 중복체크 작업중">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e385208-18fe-41e8-8535-2990f9bb1851.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-11__011___9_53__________.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-11__3_57__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-11__3_57__________.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-12__1_27__________2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-14__4_28__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-14__4_28__________.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-09-14__4_28__________1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2023-09-14__4_28__________1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/base-64/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/base-64/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/base-64/base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/base-64/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passport/JWTStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/passport/JWTStrategy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/middlewares.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +38,24 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="master" />
-        <entry key="$PROJECT_DIR$" value="feater/passport_login" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yangchanyong&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ed243e71-7223-41db-8790-ef2b55b9f6fe" />
+        <option name="url" value="https://github.com/yangchanyong/MEVN_Board_Backend.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,7 +73,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feather/jwt&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.2&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.2&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/workspaces/workspace-express/board-back/bin/www&quot;,
@@ -70,6 +90,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\workspaces\workspace-express\board-back\model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspaces\workspace-express\board-back\redis" />
     </key>
   </component>
   <component name="RunManager">
@@ -98,6 +121,10 @@
       <workItem from="1694398651590" duration="3374000" />
       <workItem from="1694417408707" duration="10647000" />
       <workItem from="1694755343032" duration="1854000" />
+      <workItem from="1696484041258" duration="6900000" />
+      <workItem from="1696642897577" duration="10139000" />
+      <workItem from="1696912064237" duration="14852000" />
+      <workItem from="1696929337135" duration="180000" />
     </task>
     <task id="LOCAL-00001" summary="1. member service 로직 작성&#10;2. Jest를 이용한 단위테스트 실시">
       <created>1693299104374</created>
@@ -144,7 +171,23 @@
       <option name="project" value="LOCAL" />
       <updated>1694676525029</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="uri 변경">
+      <option name="closed" value="true" />
+      <created>1696484111224</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696484111224</updated>
+    </task>
+    <task id="LOCAL-00008" summary="id, nickName 중복체크 작업중">
+      <option name="closed" value="true" />
+      <created>1696559400260</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696559400260</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +212,8 @@
     <MESSAGE value="passport 로그인 기능 구현 완료" />
     <MESSAGE value="임시 커밋" />
     <MESSAGE value="app.js 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="app.js 수정" />
+    <MESSAGE value="uri 변경" />
+    <MESSAGE value="id, nickName 중복체크 작업중" />
+    <option name="LAST_COMMIT_MESSAGE" value="id, nickName 중복체크 작업중" />
   </component>
 </project>
