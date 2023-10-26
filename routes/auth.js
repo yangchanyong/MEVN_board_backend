@@ -15,6 +15,8 @@ const router = express.Router();
 const secret = process.env.JWT_SECRET;
 const jsonwebtoken = require('jsonwebtoken');
 
+const {seeProfile} = require('./profile')
+
 
 // login
 router.post('/login', isNotLoggedIn, (req, res, next) => {
@@ -53,7 +55,7 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             // redis
             redisClient.set(member.username, refreshToken);
             // redis refreshToken 만료시간 설정
-            redisClient.expire(member.username, 5)
+            redisClient.expire(member.username, 60*60*24*14)
 
             // 토큰에 만료시간이 있기에, 만료시간을 정할 필요가 없음
             // res.header({
@@ -158,9 +160,9 @@ router.post('/jwt', passport.authenticate('jwt', {session:false}),
     });
 
 
-router.get('/profile', authJwt);
+router.get('/profile', authJwt, seeProfile);
 
-router.post('/refresh', refresh)
+router.get('/refresh', refresh);
 
 
 module.exports = router;

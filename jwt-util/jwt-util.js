@@ -33,7 +33,7 @@ module.exports = {
     refresh: () => {
         return jwt.sign({}, secret, {
             algorithm: 'HS256',
-            expiresIn: '5s',
+            expiresIn: '14d',
         });
     },
     refreshVerify: async (token, username) => {

@@ -59,6 +59,7 @@ const refresh = async (req, res) => {
                 });
             }
         } else {
+            console.log('토큰 발급할필요 없음')
             // 3. access token이 만료되지 않은경우 => refresh 할 필요가 없습니다.
             res.status(400).send({
                 ok: false,
