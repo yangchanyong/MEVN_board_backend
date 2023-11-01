@@ -15,7 +15,7 @@ const router = express.Router();
 const secret = process.env.JWT_SECRET;
 const jsonwebtoken = require('jsonwebtoken');
 
-const {seeProfile} = require('./profile')
+const {seeProfile, modifyProfile, modifyPw} = require('./profile')
 
 
 // login
@@ -161,6 +161,10 @@ router.post('/jwt', passport.authenticate('jwt', {session:false}),
 
 
 router.get('/profile', authJwt, seeProfile);
+
+router.patch('/modify', authJwt, modifyProfile)
+
+router.patch('/modifyPw', authJwt, modifyPw)
 
 router.get('/refresh', refresh);
 
