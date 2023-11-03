@@ -61,14 +61,14 @@ const refresh = async (req, res) => {
         } else {
             console.log('토큰 발급할필요 없음')
             // 3. access token이 만료되지 않은경우 => refresh 할 필요가 없습니다.
-            res.status(400).send({
+            res.status(400).json({
                 ok: false,
                 message: 'Access token is not expired!',
             });
         }
     } else { // access token 또는 refresh token이 헤더에 없는 경우
         console.log('비로그인 상태(토큰값 없음)')
-        res.status(403).send({
+        res.status(403).json({
             ok: false,
             message: 'Access token and refresh token are need for refresh!',
         });

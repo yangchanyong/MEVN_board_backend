@@ -41,17 +41,6 @@ const updateMember = router.put('/:username', (req, res) => {
         .then(member => res.send(member))
         .catch(err => res.status(500).send(err));
 
-    // Member.findOne({username : req.params.username})
-    //     .then(member => {
-    //         if(!member) {
-    //             return res.status(404).send('Member not found');
-    //         }
-    //         res.send(member);
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //         res.status(500).send('Internal Server Error');
-    //     })
 });
 
 const deleteMember = router.delete('/delete/:username', (req, res) => {

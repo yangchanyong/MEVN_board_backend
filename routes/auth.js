@@ -37,15 +37,6 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             if(loginError) {
                 return next(loginError);
             }
-            // const token = jwt.sign(
-            //     {id:member.username, nickName:member.nickName},
-            //     'jwt',
-            //     {
-            //         expiresIn: '1M'
-            //     }
-            // )
-            // console.log('token ='+token)
-            // return res.json({token})
 
             // 액세스 토큰 생성
             const accessToken = `Bearer ${jwt.sign(member)}`;
@@ -58,10 +49,6 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
             redisClient.expire(member.username, 60*60*24*14)
 
             // 토큰에 만료시간이 있기에, 만료시간을 정할 필요가 없음
-            // res.header({
-            //     'Authorization' : `Bearer ${accessToken}`,
-            //     'refresh' : refreshToken
-            // })
             // client에 access, refresh token 반환
             res.status(200).json({
                 ok: true,
@@ -83,12 +70,6 @@ router.post('/logout', (req, res, next) => {
             
             const accessToken = req.headers['authorization'].split('Bearer ')[1];
             console.log(accessToken)
-            // const decode = jwt.verify(accessToken);
-            // if(decode.ok) {
-            //     console.log('decoded = ', decode)
-            //     redisClient.del(decode.id)
-            //     return res.status(200).send({message: '성공!'});
-            // }else {
             const decode = jsonwebtoken.decode(accessToken);
             console.log('auth.js decoded = ', decode)
             redisClient.del(decode.id);
