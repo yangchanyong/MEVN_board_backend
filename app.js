@@ -27,6 +27,7 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 
+
 const passportConfig = require('./passport');
 // const LocalStrategy = require('passport-local').Strategy;
 const LocalStrategy = require('passport-local');
